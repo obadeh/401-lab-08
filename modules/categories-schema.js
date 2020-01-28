@@ -2,10 +2,11 @@
 
 const mongoose = require('mongoose');
 
-const food = mongoose.Schema({
+const categorietSchema = mongoose.Schema({
+
   name: { type: String, required: true },
   display_name: { type: String, required: true },
-  description: { type: String, uppercase: true, enum: ['FRUIT', 'VEGETABLE', 'MEAT']}
+  description: { type: String, required: true }
 });
 
-module.exports = mongoose.model('food', food);
+module.exports = mongoose.model('categorietSchema', categorietSchema);
