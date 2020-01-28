@@ -18,20 +18,21 @@ describe('Categories >>>> CRUD', () => {
       })
   });
 
-//   it('get a new categorie item', () => {
-//     let testObj = { name: 'test name', display_name: 'test display_name', description: 'test description' };
-//     return mockRequest.post('/api/v1/categories')
-//       .send(testObj)
-//       .then(data => {
-//         let record = data.body;
-//         return record
-//       })
-//       .then((record)=>{
-//         mockRequest.post('/api/v1/categories').then((data)=>{
+  // it('get a new categorie item', () => {
+   
 
-//         })
-//       })
-//   });
+  //   let testObj = { name: 'test name', display_name: 'test display_name', description: 'test description' };
+  //   return mockRequest.post('/api/v1/categories')
+  //     .send(testObj)
+  //     .then(data => {
+  //       let record = data.body;
+  //       let id =record.id;
+  //       console.log('record : ', record._id);
+  //       return id;
+  //     })
+
+
+  // });
 
 
   
