@@ -5,19 +5,30 @@ const express = require('express');
 const products = require('../modules/products.js');
 const productsRoute = express.Router();
 
-
-productsRoute.get('/products', getProduct);
+productsRoute.get('/products', getProducts);
+productsRoute.get('/products/:id', getProduct);
 productsRoute.post('/products', postProduct);
 productsRoute.put('/products/:id', updateProduct);
 productsRoute.delete('/products/:id', deleteProduct);
 
 
-function getProduct(req, res, next) {
+function getProducts(req, res, next) {
     products.get()
     .then(data => {
-      res.status(200).json(data);
+        const output = {
+            count: data.length,
+            results: data,
+        };
+      res.status(200).json(output);
     }).catch(next);
 }
+
+function getProduct(req, res, next) {
+    // expects an array with the one matching record from the model
+    products.get(req.params.id)
+      .then(result => res.status(200).json(result[0]))
+      .catch(next);
+  }
 
 function postProduct(req, res, next) {
     products.create(req.body)
