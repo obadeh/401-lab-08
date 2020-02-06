@@ -1,4 +1,4 @@
-'use strict';
+
 
 const productSchema = require('./products-schema.js');
 const Model = require('./model.js');

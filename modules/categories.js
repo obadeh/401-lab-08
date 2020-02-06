@@ -1,4 +1,4 @@
-'use strict';
+
 
 const categorietSchema = require('./categories-schema');
 const Model = require('./model.js');
